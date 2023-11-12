@@ -4,7 +4,7 @@ import Root from "../Layout/Root";
 import Home from "../Pages/Home/Home";
 import ContactUs from '../Pages/ContactUs/ContactUs';
 import DashBoard from '../Pages/DashBoard/DashBoard';
-import OurMenu from '../Pages/OurMenu/OurMenu';
+import OurMenu from '../Pages/OurMenu/OurMenu/OurMenu';
 import OurShop from '../Pages/OurShop/OurShop';
 
 
