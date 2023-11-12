@@ -5,11 +5,9 @@ const OurMenu = () => {
     return (
         <div>
             <Helmet>
-
                 <title>
                     Bistro Boss | Menu
                 </title>
-
             </Helmet>
 
             <h2>Our Menu</h2>
