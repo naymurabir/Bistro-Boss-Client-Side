@@ -5,6 +5,7 @@
     background-size: cover;
     width: 1140px;
 
+
     /* Adjustments for tablets */
     @media (min-width: 768px) and (max-width: 992px) {
         width: 768px;
