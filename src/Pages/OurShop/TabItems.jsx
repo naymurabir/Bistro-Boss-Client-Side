@@ -4,11 +4,15 @@ import useMenu from "../../Hooks/useMenu";
 import Categories from "./Categories";
 
 import './TabItems.css'
+import { useParams } from "react-router-dom";
 
 
 const TabItems = () => {
 
     const [menu] = useMenu()
+
+    const { category } = useParams()
+    console.log(category);
 
     const saladItems = menu.filter(singleItem => singleItem.category === "salad")
     const pizzaItems = menu.filter(singleItem => singleItem.category === "pizza")

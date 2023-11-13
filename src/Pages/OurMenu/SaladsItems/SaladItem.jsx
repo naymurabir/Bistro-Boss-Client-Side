@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 
 const SaladItem = ({ salad, setSaladCategory }) => {
 
     const { category, price, recipe, name, image } = salad
-    setSaladCategory(category)
+
+    useEffect(() => {
+        setSaladCategory(category);
+    }, [category, setSaladCategory]);
+
     return (
         <div>
             <div className="max-w-screen-xl mx-auto px-2 md:px-10 lg:px-20">

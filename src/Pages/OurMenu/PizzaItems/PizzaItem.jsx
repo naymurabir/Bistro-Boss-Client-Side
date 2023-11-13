@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 
 
 const PizzaItem = ({ pizza, setPizzaCategory }) => {
 
     const { category, price, recipe, name, image } = pizza
-    setPizzaCategory(category)
+
+    useEffect(() => {
+        setPizzaCategory(category)
+    }, [setPizzaCategory, category])
+
     return (
         <div>
             <div className="max-w-screen-xl mx-auto px-2 md:px-10 lg:px-20">

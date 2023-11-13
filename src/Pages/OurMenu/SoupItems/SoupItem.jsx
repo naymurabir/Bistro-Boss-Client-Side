@@ -1,9 +1,12 @@
+import { useEffect } from "react";
 
 const SoupItem = ({ soup, setSoupCategory }) => {
 
     const { category, price, recipe, name, image } = soup
 
-    setSoupCategory(category)
+    useEffect(() => {
+        setSoupCategory(category);
+    }, [category, setSoupCategory]);
 
     return (
         <div>
