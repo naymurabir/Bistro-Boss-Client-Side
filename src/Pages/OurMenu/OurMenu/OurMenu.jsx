@@ -25,7 +25,7 @@ const OurMenu = () => {
                 </title>
             </Helmet>
 
-            <Cover img={menuImg}></Cover>
+            <Cover img={menuImg} title={"Our Menu"} description={"Would you like to try a dish?."}></Cover>
 
             <SectionTitle
                 subHeading={"---Don't miss---"}
@@ -33,20 +33,20 @@ const OurMenu = () => {
             </SectionTitle>
 
             {/* Desserts Item */}
-            <MenuCategory menuCoverImg={desertImg} menuTitle={"DESSERTS"} menuDescription={"Our dessert items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
+            <MenuCategory menuCoverImg={desertImg} title={"DESSERTS"} description={"Our dessert items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
             <Desserts></Desserts>
 
             {/* Pizza Item */}
-            <MenuCategory menuCoverImg={pizzaImg} menuTitle={"Pizza"} menuDescription={"Our pizza items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
+            <MenuCategory menuCoverImg={pizzaImg} title={"Pizza"} description={"Our pizza items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
             <PizzaItems></PizzaItems>
 
             {/* Salads Item */}
-            <MenuCategory menuCoverImg={saladImg} menuTitle={"Salads"} menuDescription={"Our Salad items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
+            <MenuCategory menuCoverImg={saladImg} title={"Salads"} description={"Our Salad items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
             <SaladsItems></SaladsItems>
 
             {/* Soup Item */}
 
-            <MenuCategory menuCoverImg={soupImg} menuTitle={"Soup"} menuDescription={"Our Soup items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
+            <MenuCategory menuCoverImg={soupImg} title={"Soup"} description={"Our Soup items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
             <SoupItems></SoupItems>
         </div>
     );

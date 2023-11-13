@@ -1,9 +1,9 @@
 
 
-const PizzaItem = ({ pizza }) => {
+const PizzaItem = ({ pizza, setPizzaCategory }) => {
 
-    const { price, recipe, name, image } = pizza
-
+    const { category, price, recipe, name, image } = pizza
+    setPizzaCategory(category)
     return (
         <div>
             <div className="max-w-screen-xl mx-auto px-2 md:px-10 lg:px-20">

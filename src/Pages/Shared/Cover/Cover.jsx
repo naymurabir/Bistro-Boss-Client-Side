@@ -1,7 +1,7 @@
 import { Parallax } from 'react-parallax';
 
 
-const Cover = ({ img }) => {
+const Cover = ({ img, title, description }) => {
     return (
 
         <Parallax
@@ -14,8 +14,8 @@ const Cover = ({ img }) => {
                 <div className="hero-overlay bg-opacity-30"></div>
                 <div className="hidden md:block text-center bg-black text-white bg-opacity-60 px-32 py-12 rounded">
                     <div className="max-w-md">
-                        <h1 className="mb-5 text-5xl font-bold">Our Menu</h1>
-                        <p className="mb-5">Would you like to try a dish?.</p>
+                        <h1 className="mb-5 text-5xl font-bold">{title} </h1>
+                        <p className="mb-5">{description}</p>
                     </div>
                 </div>
             </div>

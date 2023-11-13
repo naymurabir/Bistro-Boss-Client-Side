@@ -1,7 +1,9 @@
 
-const SoupItem = ({ soup }) => {
+const SoupItem = ({ soup, setSoupCategory }) => {
 
-    const { price, recipe, name, image } = soup
+    const { category, price, recipe, name, image } = soup
+
+    setSoupCategory(category)
 
     return (
         <div>
