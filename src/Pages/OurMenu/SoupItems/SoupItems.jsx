@@ -13,7 +13,7 @@ const SoupItems = () => {
                     soups.map(soup => <SoupItem key={soup._id} soup={soup}></SoupItem>)
                 }
             </div>
-            <div className="text-center">
+            <div className="text-center pb-5">
                 <button className='btn btn-outline border-0 border-b-4 text-black'>ORDER YOUR FAVOURITE FOOD</button>
             </div>
         </div>
