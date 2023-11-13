@@ -1,11 +1,10 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import 'react-tabs/style/react-tabs.css';
-import useMenu from "../../Hooks/useMenu";
 import Categories from "./Categories";
-
 import './TabItems.css'
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useInterceptors from "../../Hooks/useInterceptors";
 
 
 const TabItems = () => {
@@ -15,9 +14,17 @@ const TabItems = () => {
     const initialIndex = categories.indexOf(category)
     const [tabIndex, setTabIndex] = useState(initialIndex)
 
-    const [menu] = useMenu()
+    const [menu, setMenu] = useState([])
+    const axiosInstance = useInterceptors()
 
-    console.log(category);
+    useEffect(() => {
+        const getMenus = async () => {
+            const { data } = await axiosInstance.get('/menus')
+            setMenu(data)
+        }
+        getMenus()
+    }, [axiosInstance])
+
 
     const saladItems = menu.filter(singleItem => singleItem.category === "salad")
     const pizzaItems = menu.filter(singleItem => singleItem.category === "pizza")

@@ -1,13 +1,23 @@
-import { useState } from "react";
-import useMenu from "../../../Hooks/useMenu";
+import { useEffect, useState } from "react";
 import PizzaItem from "./PizzaItem";
 import { Link } from "react-router-dom";
+import useInterceptors from "../../../Hooks/useInterceptors";
 
 const PizzaItems = () => {
 
     const [pizzaCategory, setPizzaCategory] = useState('')
 
-    const [menu] = useMenu()
+    const [menu, setMenu] = useState([])
+    const axiosInstance = useInterceptors()
+
+    useEffect(() => {
+        const getMenus = async () => {
+            const { data } = await axiosInstance.get('/menus')
+            setMenu(data)
+        }
+        getMenus()
+    }, [axiosInstance])
+
     const pizzas = menu.filter(item => item.category === "pizza")
 
     return (
@@ -19,7 +29,7 @@ const PizzaItems = () => {
             </div>
             <div className="text-center">
                 <Link to={`/ourShop/${pizzaCategory}`}>
-                    <button className='btn btn-outline border-0 border-b-4 text-black'>ORDER YOUR FAVOURITE FOOD</button>
+                    <button className='btn btn-outline border-0 border-b-4 text-black'>ORDER YOUR FAVORITE PIZZA</button>
                 </Link>
             </div>
         </div>

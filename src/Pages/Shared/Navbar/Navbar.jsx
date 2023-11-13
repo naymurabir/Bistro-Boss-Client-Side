@@ -8,7 +8,7 @@ const Navbar = () => {
         <NavLink to="/contact" className="text-base mr-2 font-semibold"> Contact</NavLink>
         <NavLink to="/dashboard" className="text-base mr-2 font-semibold"> Dashboard</NavLink>
         <NavLink to="/ourMenu" className="text-base mr-2 font-semibold"> Our Menu</NavLink>
-        <NavLink to="/ourShop" className="text-base mr-2 font-semibold"> Our Shop</NavLink>
+        <NavLink to="/ourShop/salad" className="text-base mr-2 font-semibold"> Order Us</NavLink>
     </>
 
     return (
