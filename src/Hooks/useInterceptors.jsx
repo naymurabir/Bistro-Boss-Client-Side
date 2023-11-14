@@ -1,12 +1,11 @@
 import axios from "axios";
 import { useEffect } from "react";
 
+const instance = axios.create({
+    baseURL: 'http://localhost:5000',
+})
 
 const useInterceptors = () => {
-
-    const instance = axios.create({
-        baseURL: 'http://localhost:5000',
-    })
 
     useEffect(() => {
         instance.interceptors.request.use(function (config) {
@@ -21,7 +20,7 @@ const useInterceptors = () => {
 
             return Promise.reject(error);
         });
-    }, [instance.interceptors.request, instance.interceptors.response])
+    }, [])
 
     return instance;
 };

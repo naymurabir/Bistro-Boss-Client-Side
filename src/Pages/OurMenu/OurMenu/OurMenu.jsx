@@ -8,14 +8,14 @@ import desertImg from '../../../assets/home/chef-service.jpg'
 import pizzaImg from '../../../assets/menu/pizza-bg.jpg'
 import saladImg from '../../../assets/menu/salad-bg.jpg'
 import soupImg from '../../../assets/menu/salad-bg.jpg'
+import drinksImg from '../../../assets/menu/banner3.jpg'
 import PizzaItems from '../PizzaItems/PizzaItems';
 import SaladsItems from '../SaladsItems/SaladsItems';
 import SoupItems from '../SoupItems/SoupItems';
+import DrinksItems from '../DrinksItems/DrinksItems';
 
 
 const OurMenu = () => {
-
-
 
     return (
         <div>
@@ -32,22 +32,25 @@ const OurMenu = () => {
                 heading={"TODAY'S OFFER"}>
             </SectionTitle>
 
-            {/* Desserts Item */}
-            <MenuCategory menuCoverImg={desertImg} title={"DESSERTS"} description={"Our dessert items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
-            <Desserts></Desserts>
+            {/* Salads Item */}
+            <MenuCategory menuCoverImg={saladImg} title={"Salads"} description={"Our Salad items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
+            <SaladsItems></SaladsItems>
 
             {/* Pizza Item */}
             <MenuCategory menuCoverImg={pizzaImg} title={"Pizza"} description={"Our pizza items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
             <PizzaItems></PizzaItems>
 
-            {/* Salads Item */}
-            <MenuCategory menuCoverImg={saladImg} title={"Salads"} description={"Our Salad items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
-            <SaladsItems></SaladsItems>
-
             {/* Soup Item */}
-
             <MenuCategory menuCoverImg={soupImg} title={"Soup"} description={"Our Soup items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
             <SoupItems></SoupItems>
+
+            {/* Desserts Item */}
+            <MenuCategory menuCoverImg={desertImg} title={"DESSERTS"} description={"Our dessert items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
+            <Desserts></Desserts>
+
+            {/* Drinks Item */}
+            <MenuCategory menuCoverImg={drinksImg} title={"Drinks"} description={"Our Drinks items are always best to the customers. Their ratings are always awesome. We always try to improve the taste quality of our food items."} ></MenuCategory>
+            <DrinksItems></DrinksItems>
         </div>
     );
 };

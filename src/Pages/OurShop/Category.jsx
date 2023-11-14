@@ -13,7 +13,7 @@ const Category = ({ item }) => {
                         <h2 className=" text-xl text-black font-semibold">{name}</h2>
                         <p className="text-black font-semibold">{recipe}</p>
                         <div className="card-actions justify-center">
-                            <button className="bg-gray-100 px-2 py-2 rounded text-[#BB8506] font-semibold border-b-2 border-[#BB8506] mb-2">Add To Cart</button>
+                            <button className="bg-gray-100 px-2 py-2 rounded text-[#BB8506] font-semibold border-b-2 border-[#BB8506] mb-2 hover:bg-slate-800 text-[#BB8506]">Add To Cart</button>
                         </div>
                     </div>
                 </div>
