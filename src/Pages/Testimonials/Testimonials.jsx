@@ -9,17 +9,23 @@ import { useEffect, useState } from "react";
 
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
+import useInterceptors from "../../Hooks/useInterceptors";
 
 
 const Testimonials = () => {
 
+    const axiosInstance = useInterceptors()
+
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch('reviews.json')
-            .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [])
+        const getReviews = async () => {
+            const { data } = await axiosInstance.get('/reviews')
+            setReviews(data)
+        }
+        getReviews()
+    }, [axiosInstance])
+
 
     return (
         <section className="max-w-screen-xl mx-auto px-2 md:px-10 lg:px-20">

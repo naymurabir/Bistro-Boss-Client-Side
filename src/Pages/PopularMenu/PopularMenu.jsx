@@ -1,10 +1,21 @@
 import MenuItem from "./MenuItem";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
-import useMenu from "../../Hooks/useMenu";
+import useInterceptors from "../../Hooks/useInterceptors";
+import { useEffect, useState } from "react";
+
 
 const PopularMenu = () => {
 
-    const [menu] = useMenu()
+    const [menu, setMenu] = useState([])
+    const axiosInstance = useInterceptors()
+    useEffect(() => {
+        const getPopularMenus = async () => {
+            const { data } = await axiosInstance.get('/menus')
+            setMenu(data)
+        }
+        getPopularMenus()
+    }, [axiosInstance])
+
     const popular = menu.filter(item => item.category === 'popular')
 
     return (
