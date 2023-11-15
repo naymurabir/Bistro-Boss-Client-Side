@@ -4,11 +4,15 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import swal from "sweetalert";
 import Swal from "sweetalert2";
 import 'cooltipz-css'
+import { FaCartPlus } from "react-icons/fa";
+import useCarts from "../../../Hooks/useCarts";
 
 
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext)
+
+    const { carts } = useCarts()
 
     const navLinks = <>
         <NavLink to="/" className="text-base mr-2 font-semibold"> Home</NavLink>
@@ -20,6 +24,13 @@ const Navbar = () => {
         <NavLink to="/ourMenu" className="text-base mr-2 font-semibold"> Our Menu</NavLink>
 
         <NavLink to="/ourShop/salad" className="text-base mr-2 font-semibold"> Order Us</NavLink>
+
+        <NavLink to="/">
+            <button className="flex gap-2 items-center">
+                <FaCartPlus className="text-xl text-[#f5f51a]"></FaCartPlus>
+                <div className="badge badge-warning">+{carts.length}</div>
+            </button>
+        </NavLink>
 
     </>
 

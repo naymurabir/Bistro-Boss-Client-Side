@@ -1,7 +1,7 @@
 import loginImg from '../../assets/login/login-register.png'
 import fbImg from '../../assets/login/fb.png'
 import googleImg from '../../assets/login/google 1.png'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { useContext, useEffect, useState } from 'react';
@@ -13,6 +13,7 @@ const Login = () => {
 
     const { signInUser, googleLogin } = useContext(AuthContext)
     const navigate = useNavigate()
+    const location = useLocation()
 
     const [disabled, setDisabled] = useState(true)
 
