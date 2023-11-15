@@ -1,17 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import loginImg from '../../assets/login/login-register.png'
 
 import { useForm } from "react-hook-form"
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import Swal from "sweetalert2";
+import swal from "sweetalert";
 
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useContext(AuthContext)
 
-    const { register, handleSubmit, formState: { errors } } = useForm()
+    const { register, handleSubmit, reset, formState: { errors } } = useForm()
+
+    const navigate = useNavigate()
+
 
     const onSubmit = (data) => {
         console.log(data)
@@ -29,6 +33,16 @@ const Register = () => {
                     color: 'white',
                     timer: 2000
                 })
+                updateUserProfile(data.name, data.photo)
+                    .then(() => {
+                        console.log("Profile updated.");
+                        navigate('/login')
+                        reset()
+                    })
+                    .catch(error => {
+                        console.log("Error:", error.message);
+                        swal(error.message)
+                    })
             })
             .catch(error => {
                 console.log("Error:", error.message);
