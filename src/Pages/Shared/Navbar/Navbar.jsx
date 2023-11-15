@@ -1,7 +1,14 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProviders";
+import swal from "sweetalert";
+import Swal from "sweetalert2";
+import 'cooltipz-css'
 
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
 
     const navLinks = <>
         <NavLink to="/" className="text-base mr-2 font-semibold"> Home</NavLink>
@@ -15,6 +22,27 @@ const Navbar = () => {
         <NavLink to="/ourShop/salad" className="text-base mr-2 font-semibold"> Order Us</NavLink>
 
     </>
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Logout Successful',
+                    showConfirmButton: false,
+                    background: '#343436',
+                    heightAuto: '100px',
+                    color: 'white',
+                    timer: 2000
+                })
+            })
+            .catch(error => {
+                console.log();
+                swal(error.message)
+            })
+    }
+
 
     return (
         <nav className="">
@@ -38,9 +66,36 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/login">
-                        <button className="bg-transparent text-white border border-white rounded font-semibold px-3 py-2 hover:bg-[#B4B307] ">Log In</button>
-                    </Link>
+
+
+                    <div className="flex items-center gap-2">
+
+                        {
+                            user ? <div className="flex gap-2">
+                                <div aria-label={user?.displayName} data-cooltipz-dir="bottom" className="flex items-center gap-2">
+                                    <img className="w-10 h-10 rounded-full hidden md:block" src={user?.photoURL} alt="" referrerPolicy="no-referrer" /> </div>
+
+                                <div className="flex items-center gap-1">
+                                    <button onClick={handleLogOut} className="bg-transparent text-white border border-white rounded font-semibold px-3 py-2 hover:bg-[#B4B307] ">Log Out</button>
+                                </div>
+                            </div>
+
+                                :
+                                <div className="flex items-center gap-2">
+                                    <label >
+                                        {/* <div className="w-10 rounded-full hidden md:block">
+                                        <img src={userImg} />
+                                    </div> */}
+                                    </label>
+
+                                    <Link to="/login">
+                                        <button className="bg-transparent text-white border border-white rounded font-semibold px-3 py-2 hover:bg-[#B4B307] ">Log In</button>
+                                    </Link>
+                                </div>
+
+                        }
+
+                    </div>
                 </div>
             </div>
         </nav>

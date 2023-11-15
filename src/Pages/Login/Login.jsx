@@ -1,39 +1,111 @@
 import loginImg from '../../assets/login/login-register.png'
 import fbImg from '../../assets/login/fb.png'
 import googleImg from '../../assets/login/google 1.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../Providers/AuthProviders';
+import Swal from 'sweetalert2';
 
 
 const Login = () => {
 
+    const { signInUser, googleLogin } = useContext(AuthContext)
+    const navigate = useNavigate()
+
     const [disabled, setDisabled] = useState(true)
 
-    const captchaRef = useRef(null)
+    const [captcha, setCaptcha] = useState('')
 
     useEffect(() => {
         loadCaptchaEnginge(6);
     }, [])
+
+    useEffect(() => {
+        if (captcha.length === 6) {
+            if (validateCaptcha(captcha) == true) {
+                setDisabled(false)
+            }
+
+            else {
+                setDisabled(true)
+            }
+        } else {
+            setDisabled(true)
+        }
+    }, [captcha])
+
 
     const handleLogin = e => {
         e.preventDefault()
         const form = new FormData(e.currentTarget)
         const email = form.get('email')
         const password = form.get('password')
-        console.log(email, password);
+
+        // Call signInUser and pass email and password 
+        signInUser(email, password)
+            .then(result => {
+                const loggedUser = result.user
+                console.log(loggedUser);
+                navigate(location?.state ? location?.state : '/')
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'User logged in successfully.',
+                    showConfirmButton: false,
+                    background: '#343436',
+                    heightAuto: '100px',
+                    color: 'white',
+                    timer: 2000
+                })
+                e.target.reset()
+            })
+            .catch(error => {
+                console.log("Error:", error.message);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: "Your email / password is invalid.",
+                    showConfirmButton: false,
+                    background: '#343436',
+                    heightAuto: '100px',
+                    color: 'white',
+                    timer: 2000
+                })
+            })
     }
 
-    const handleValidateCaptcha = () => {
-        const user_captcha_value = captchaRef.current.value
-        if (validateCaptcha(user_captcha_value) == true) {
-            setDisabled(false)
-        }
-
-        else {
-            setDisabled(true)
-        }
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(result => {
+                const user = result.user
+                console.log(user);
+                navigate(location?.state ? location?.state : '/')
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'User logged in successfully.',
+                    showConfirmButton: false,
+                    background: '#343436',
+                    heightAuto: '100px',
+                    color: 'white',
+                    timer: 2000
+                })
+            })
+            .then(error => {
+                console.log("Error:", error.message);
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: "Your google account is invalid.",
+                    showConfirmButton: false,
+                    background: '#343436',
+                    heightAuto: '100px',
+                    color: 'white',
+                    timer: 2000
+                })
+            })
     }
 
     return (
@@ -70,12 +142,12 @@ const Login = () => {
                                         <LoadCanvasTemplate />
                                     </label>
                                     <input
-                                        ref={captchaRef}
+                                        onChange={(event) => setCaptcha(event.target.value)}
+                                        name='captcha'
                                         type="text"
                                         placeholder="Type the captcha"
                                         className="input input-bordered focus:outline-0"
                                         required />
-                                    <button type="button" onClick={handleValidateCaptcha} className="btn btn-xs btn-outline mt-2">Validate</button>
                                 </div>
                                 <div className="form-control">
                                     {/* <button disabled={disabled} className="bg-gray-100 px-2 py-2 rounded text-[#BB8506] font-semibold border-b-2 border-[#BB8506] mb-2 hover:bg-slate-800 hover:text-[#BB8506]">Login</button> */}
@@ -92,7 +164,7 @@ const Login = () => {
                                     <h3 className='text-xs text-center font-semibold'>Or sign in with</h3>
                                     <div className='flex justify-center items-center gap-4 mt-3'>
                                         <button> <img src={fbImg} alt="" /> </button>
-                                        <button >  <img src={googleImg} alt="" /></button>
+                                        <button onClick={handleGoogleLogin}>  <img src={googleImg} alt="" /></button>
                                     </div>
                                 </div>
 
