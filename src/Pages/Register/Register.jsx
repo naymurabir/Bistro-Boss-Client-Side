@@ -64,12 +64,12 @@ const Register = () => {
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col md:flex-row lg:flex-row gap-10 lg:gap-20">
                     <div className="text-center lg:text-left lg:w-[50%]">
-                        <img className='w-[200px] md:w-[400px]' src={loginImg} alt="" />
+                        <img className='w-[200px] md:w-[450px]' src={loginImg} alt="" />
                     </div>
                     <div className="card flex-shrink-0  max-w-sm  border border-gray-500 lg:w-[50%]">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <h2 className='text-2xl font-semibold text-center mt-5'>Sign Up</h2>
-                            <div className="card-body">
+                            <div className="px-10 py-3">
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text font-semibold">Name</span>
@@ -133,7 +133,7 @@ const Register = () => {
                                 </div>
 
                                 <div className="form-control">
-                                    <button className='text-white font-semibold bg-[#f3411d] px-3 py-2 rounded'>Sign Up</button>
+                                    <button className='btn btn-success mt-2'>Sign Up</button>
                                 </div>
 
                                 <div className='text-center mt-2'>

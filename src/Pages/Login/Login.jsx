@@ -114,12 +114,12 @@ const Login = () => {
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col md:flex-row lg:flex-row gap-10 lg:gap-20">
                     <div className="text-center lg:text-left lg:w-[50%]">
-                        <img className='w-[200px] md:w-[450px]' src={loginImg} alt="" />
+                        <img className='w-[200px] md:w-[500px]' src={loginImg} alt="" />
                     </div>
                     <div className="card flex-shrink-0  max-w-sm  border border-gray-500 lg:w-[50%]">
                         <form onSubmit={handleLogin}>
                             <h2 className='text-2xl font-semibold text-center mt-5'>Log In</h2>
-                            <div className="card-body">
+                            <div className="px-10 py-3">
 
                                 <div className="form-control">
                                     <label className="label">
@@ -152,7 +152,7 @@ const Login = () => {
                                 </div>
                                 <div className="form-control">
                                     {/* <button disabled={disabled} className="bg-gray-100 px-2 py-2 rounded text-[#BB8506] font-semibold border-b-2 border-[#BB8506] mb-2 hover:bg-slate-800 hover:text-[#BB8506]">Login</button> */}
-                                    <button disabled={disabled} className='btn btn-success'>Login</button>
+                                    <button disabled={disabled} className='btn btn-success mt-2'>Login</button>
                                 </div>
 
                                 <div className='flex justify-center'>
