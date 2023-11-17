@@ -58,11 +58,3 @@ const Category = () => {
 };
 
 export default Category;
-
-
-{/* <div className='text-center my-5'>
-    <p className='text-sm text-[#D99904]'>---From 11:00am to 10:00pm---</p>
-    <hr className='w-[200px] mx-auto my-2' />
-    <h1 className='text-xl font-semibold'>ORDER ONLINE</h1>
-    <hr className='w-[200px] mx-auto my-2' />
-</div> */}

@@ -1,0 +1,184 @@
+[
+    {
+        "name": "Haddock",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-1-370x247.jpg",
+        "category": "salad",
+        "price": 1470
+    },
+    {
+        "name": "Haddock",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-1-370x247.jpg",
+        "category": "drinks",
+        "price": 1470
+    },
+    {
+        "name": "Escalope de Veau",
+        "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée.",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
+        "category": "popular",
+        "price": 1450
+    },
+    {
+        "name": "Roast Duck Breast",
+        "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée.",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
+        "category": "popular",
+        "price": 1450
+    },
+    {
+        "name": "Breton Fish Stew",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-8-370x247.jpg",
+        "category": "pizza",
+        "price": 1290
+    },
+    {
+        "name": "Chicken and Walnut",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
+        "category": "salad",
+        "price": 1350
+    },
+    {
+        "name": "Tuna Niçoise",
+        "recipe": "Warm goats cheese and roasted vegetable salad with black olive tapenade crostini",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
+        "category": "offered",
+        "price": 1050
+    },
+    {
+        "name": "Chicken and Walnut",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
+        "category": "salad",
+        "price": 1350
+    },
+    {
+        "name": "Fish Parmentier",
+        "recipe": "Sautéed breaded veal escalope with watercress, lemon and veal jus.",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-8-370x247.jpg",
+        "category": "salad",
+        "price": 950
+    },
+    {
+        "name": "Chicken and Walnut",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
+        "category": "offered",
+        "price": 1350
+    },
+    {
+        "name": "Roasted Pork Belly",
+        "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée..",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
+        "category": "popular",
+        "price": 1450
+    },
+    {
+        "name": "Haddock",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-1-370x247.jpg",
+        "category": "drinks",
+        "price": 1470
+    },
+    {
+        "name": "Roast Duck Breast",
+        "recipe": "Roasted duck breast (served pink) with gratin potato and a.",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-4-370x247.jpg",
+        "category": "offered",
+        "price": 1450
+    },
+    {
+        "name": "Escalope de Veau",
+        "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée.",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
+        "category": "dessert",
+        "price": 1250
+    },
+    {
+        "name": "Fish Parmentier",
+        "recipe": "Pan roasted haddock fillet wrapped in smoked French bacon with pea purée.",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
+        "category": "popular",
+        "price": 1450
+    },
+    {
+        "name": "Chicken and Walnut",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
+        "category": "dessert",
+        "price": 1350
+    },
+    {
+        "name": "Chicken and Walnut",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-3-370x247.jpg",
+        "category": "dessert",
+        "price": 1350
+    },
+    {
+        "name": "Haddock",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-1-370x247.jpg",
+        "category": "dessert",
+        "price": 1470
+    },
+    {
+        "name": "Goats Cheese Salad",
+        "recipe": "Chargrilled chicken with avocado, baby gem lettuce, baby spinach.",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2017/01/bbq-370x247.jpg",
+        "category": "pizza",
+        "price": 1450
+    },
+    {
+        "name": "Haddock",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-1-370x247.jpg",
+        "category": "soup",
+        "price": 1470
+    },
+    {
+        "name": "Breton Fish Stew",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-8-370x247.jpg",
+        "category": "pizza",
+        "price": 1290
+    },
+    {
+        "name": "Escalope de Veau",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
+        "category": "offered",
+        "price": 1250
+    },
+    {
+        "name": "Breton Fish Stew",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-8-370x247.jpg",
+        "category": "pizza",
+        "price": 1290
+    },
+    {
+        "name": "Fish Parmentier",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-8-370x247.jpg",
+        "category": "soup",
+        "price": 950
+    },
+    {
+        "name": "Roast Duck Breast",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-4-370x247.jpg",
+        "category": "soup",
+        "price": 1450
+    },
+    {
+        "name": "Tuna Niçoise",
+        "recipe": "Chargrilled fresh tuna steak (served medium rare)",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-2-370x247.jpg",
+        "category": "soup",
+        "price": 1050
+    }
+]

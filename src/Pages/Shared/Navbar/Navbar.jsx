@@ -19,13 +19,11 @@ const Navbar = () => {
 
         <NavLink to="/contact" className="text-base mr-2 font-semibold"> Contact</NavLink>
 
-        <NavLink to="/dashboard" className="text-base mr-2 font-semibold"> Dashboard</NavLink>
-
         <NavLink to="/ourMenu" className="text-base mr-2 font-semibold"> Our Menu</NavLink>
 
         <NavLink to="/ourShop/salad" className="text-base mr-2 font-semibold"> Order Us</NavLink>
 
-        <NavLink to="/">
+        <NavLink to="/dashboard/cart">
             <button className="flex gap-2 items-center">
                 <FaCartPlus className="text-xl text-[#f5f51a]"></FaCartPlus>
                 <div className="badge badge-warning">+{carts.length}</div>
