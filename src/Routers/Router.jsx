@@ -8,8 +8,13 @@ import OurShop from '../Pages/OurShop/OurShop';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import Dashboard from '../Layout/Dashboard';
-import Cart from '../Pages/Dashboard/Cart/Cart';
+import Cart from '../Pages/Dashboard/UserPanel/Cart';
 import PrivateRoute from '../Pages/PrivateRoute/PrivateRoute';
+import AllUsers from '../Pages/Dashboard/AdminPanel/AllUsers';
+import ManageBookings from '../Pages/Dashboard/AdminPanel/ManageBookings';
+import ManageItems from '../Pages/Dashboard/AdminPanel/ManageItems';
+import AddItems from '../Pages/Dashboard/AdminPanel/AddItems';
+import AdminHome from '../Pages/Dashboard/AdminPanel/AdminHome';
 
 
 const router = createBrowserRouter([
@@ -50,6 +55,26 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/cart',
                 element: <Cart></Cart>
+            },
+            {
+                path: '/dashboard/allUsers',
+                element: <AllUsers></AllUsers>
+            },
+            {
+                path: '/dashboard/manageBookings',
+                element: <ManageBookings></ManageBookings>
+            },
+            {
+                path: '/dashboard/manageItems',
+                element: <ManageItems></ManageItems>
+            },
+            {
+                path: '/dashboard/addItems',
+                element: <AddItems></AddItems>
+            },
+            {
+                path: '/dashboard/adminHome',
+                element: <AdminHome></AdminHome>
             }
         ]
     }

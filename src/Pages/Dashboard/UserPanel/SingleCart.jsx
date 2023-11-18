@@ -1,7 +1,7 @@
 import { AiOutlineDelete } from "react-icons/ai";
 
 
-const SingleCart = ({ cart, index, handleDeleteMyJobs }) => {
+const SingleCart = ({ cart, index, handleDeleteCarts }) => {
 
     const { _id, image, name, price } = cart
 
@@ -29,7 +29,7 @@ const SingleCart = ({ cart, index, handleDeleteMyJobs }) => {
                 </td>
 
                 <td>
-                    <button onClick={() => handleDeleteMyJobs(_id)} className=' text-white py-2 px-2 bg-red-500 text-xl rounded-sm font-semibold'> <AiOutlineDelete></AiOutlineDelete> </button>
+                    <button onClick={() => handleDeleteCarts(_id)} className=' text-white py-2 px-2 bg-red-500 text-xl rounded-sm font-semibold'> <AiOutlineDelete></AiOutlineDelete> </button>
                 </td>
             </tr>
         </>

@@ -28,7 +28,7 @@ const Cart = () => {
         </div>
     }
 
-    const handleDeleteMyJobs = (id) => {
+    const handleDeleteCarts = (id) => {
 
         swal({
             title: "Are you sure?",
@@ -86,7 +86,7 @@ const Cart = () => {
                             </thead>
                             <tbody>
                                 {
-                                    carts.map((cart, index) => <SingleCart key={cart._id} cart={cart} index={index} handleDeleteMyJobs={handleDeleteMyJobs}></SingleCart>)
+                                    carts.map((cart, index) => <SingleCart key={cart._id} cart={cart} index={index} handleDeleteCarts={handleDeleteCarts}></SingleCart>)
                                 }
                             </tbody>
                         </table>

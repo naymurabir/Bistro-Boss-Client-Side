@@ -1,10 +1,12 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaCalendar, FaHome, FaShoppingCart, FaRegStar, FaRegBookmark, FaSearch, FaPhone } from "react-icons/fa";
+import { FaCalendar, FaHome, FaShoppingCart, FaRegStar, FaRegBookmark, FaSearch, FaPhone, FaRegAddressBook, FaUser, FaList } from "react-icons/fa";
 import useCarts from "../Hooks/useCarts";
 
 const Dashboard = () => {
 
     const { carts } = useCarts()
+
+    const isAdmin = true
 
 
     return (
@@ -13,15 +15,31 @@ const Dashboard = () => {
                 <div className="lg:w-[20%] min-h-screen bg-[#D1A054]">
                     <ul className="menu px-4 py-2">
 
-                        <li className="font-bold"> <NavLink to="/dashboard/userHome"> <FaHome></FaHome> User Home</NavLink> </li>
+                        {
+                            isAdmin ? <>
+                                <li className="font-bold"> <NavLink to="/dashboard/adminHome"> <FaHome></FaHome> Admin Home</NavLink> </li>
 
-                        <li className="font-bold"> <NavLink to="/dashboard/reservation"> <FaCalendar></FaCalendar> Reservation </NavLink> </li>
+                                <li className="font-bold"> <NavLink to="/dashboard/addItems"> <FaRegAddressBook></FaRegAddressBook> Add Items </NavLink> </li>
 
-                        <li className="font-bold"> <NavLink to="/dashboard/cart"> <FaShoppingCart></FaShoppingCart> My Cart ({carts.length})</NavLink> </li>
+                                <li className="font-bold"> <NavLink to="/dashboard/manageItems"> <FaList></FaList> Manage Items</NavLink> </li>
 
-                        <li className="font-bold"> <NavLink to="/dashboard/review"> <FaRegStar></FaRegStar>Add Review</NavLink> </li>
+                                <li className="font-bold"> <NavLink to="/dashboard/manageBookings"> <FaRegStar></FaRegStar>Manage Bookings</NavLink> </li>
 
-                        <li className="font-bold"> <NavLink to="/dashboard/bookings"> <FaRegBookmark></FaRegBookmark>My Bookings</NavLink> </li>
+                                <li className="font-bold"> <NavLink to="/dashboard/allUsers"> <FaUser></FaUser> All Users</NavLink> </li>
+                            </>
+                                :
+                                <>
+                                    <li className="font-bold"> <NavLink to="/dashboard/userHome"> <FaHome></FaHome> User Home</NavLink> </li>
+
+                                    <li className="font-bold"> <NavLink to="/dashboard/reservation"> <FaCalendar></FaCalendar> Reservation </NavLink> </li>
+
+                                    <li className="font-bold"> <NavLink to="/dashboard/cart"> <FaShoppingCart></FaShoppingCart> My Cart ({carts.length})</NavLink> </li>
+
+                                    <li className="font-bold"> <NavLink to="/dashboard/review"> <FaRegStar></FaRegStar>Add Review</NavLink> </li>
+
+                                    <li className="font-bold"> <NavLink to="/dashboard/bookings"> <FaRegBookmark></FaRegBookmark>My Bookings</NavLink> </li>
+                                </>
+                        }
 
                         {/* Shared NavLinks */}
                         <div className="divider"></div>
