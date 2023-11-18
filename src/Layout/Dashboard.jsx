@@ -14,7 +14,7 @@ const Dashboard = () => {
             <div className="flex flex-col lg:flex-row gap-10">
                 <div className="lg:w-[20%] min-h-screen bg-[#D1A054]">
                     <ul className="menu px-4 py-2">
-
+                        {/* Admin Links */}
                         {
                             isAdmin ? <>
                                 <li className="font-bold"> <NavLink to="/dashboard/adminHome"> <FaHome></FaHome> Admin Home</NavLink> </li>
@@ -29,6 +29,7 @@ const Dashboard = () => {
                             </>
                                 :
                                 <>
+                                    {/* Users Links */}
                                     <li className="font-bold"> <NavLink to="/dashboard/userHome"> <FaHome></FaHome> User Home</NavLink> </li>
 
                                     <li className="font-bold"> <NavLink to="/dashboard/reservation"> <FaCalendar></FaCalendar> Reservation </NavLink> </li>
