@@ -59,13 +59,15 @@ const Cart = () => {
     return (
         <div>
             <SectionTitle subHeading={"---My Cart---"} heading={"WANNA ADD MORE?"}></SectionTitle>
-            <div className="bg-white px-16 py-4">
-                <div className=" bg-white flex justify-between">
-                    <h2 className="text-2xl font-semibold">Total Orders: {carts.length}</h2>
+            <div className="bg-white lg:px-16 lg:py-4">
+                <div className=" bg-white flex flex-col md:flex-row justify-between">
 
-                    <h2 className="text-2xl font-semibold">Total Price: {totalPrice}</h2>
+                    <h2 className="text-xl md:text-2xl font-semibold">Total Orders: {carts.length}</h2>
 
-                    <p className="bg-[#D1A054] px-3 py-2 text-white rounded-md">Pay</p>
+                    <h2 className="text-xl md:text-2xl font-semibold">Total Price: {totalPrice}</h2>
+
+                    <p className="bg-[#D1A054] px-3 py-2 ms:w-[50px] text-white rounded-md">Pay</p>
+
                 </div>
                 <hr className="my-4" />
                 <div>

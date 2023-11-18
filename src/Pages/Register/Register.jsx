@@ -1,14 +1,19 @@
 import { Link, useNavigate } from "react-router-dom";
 import loginImg from '../../assets/login/login-register.png'
+import fbImg from '../../assets/login/fb.png'
 
 import { useForm } from "react-hook-form"
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import swal from "sweetalert";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 
 const Register = () => {
+
+    const axiosPublic = useAxiosPublic()
 
     const { createUser, updateUserProfile } = useContext(AuthContext)
 
@@ -36,8 +41,30 @@ const Register = () => {
                 updateUserProfile(data.name, data.photo)
                     .then(() => {
                         console.log("Profile updated.");
-                        navigate('/login')
-                        reset()
+
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email
+                        }
+
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                if (res.data.insertedId) {
+                                    Swal.fire({
+                                        position: 'center',
+                                        icon: 'success',
+                                        title: "Users data has been added into database.",
+                                        showConfirmButton: false,
+                                        background: '#343436',
+                                        heightAuto: '100px',
+                                        color: 'white',
+                                        timer: 2000
+                                    })
+                                    navigate('/login')
+                                    reset()
+                                }
+                            })
+
                     })
                     .catch(error => {
                         console.log("Error:", error.message);
@@ -134,6 +161,13 @@ const Register = () => {
 
                                 <div className="form-control">
                                     <button className='btn btn-success mt-2'>Sign Up</button>
+                                </div>
+                                <div>
+                                    <h3 className='text-xs text-center font-semibold'>Or sign in with</h3>
+                                    <div className='flex justify-center items-center gap-4 mt-3'>
+                                        <button> <img src={fbImg} alt="" /> </button>
+                                        <SocialLogin></SocialLogin>
+                                    </div>
                                 </div>
 
                                 <div className='text-center mt-2'>

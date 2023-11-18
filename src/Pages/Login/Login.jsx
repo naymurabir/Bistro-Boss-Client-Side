@@ -1,17 +1,17 @@
 import loginImg from '../../assets/login/login-register.png'
 import fbImg from '../../assets/login/fb.png'
-import googleImg from '../../assets/login/google 1.png'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Providers/AuthProviders';
 import Swal from 'sweetalert2';
+import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 
 
 const Login = () => {
 
-    const { signInUser, googleLogin } = useContext(AuthContext)
+    const { signInUser } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -77,38 +77,6 @@ const Login = () => {
             })
     }
 
-    const handleGoogleLogin = () => {
-        googleLogin()
-            .then(result => {
-                const user = result.user
-                console.log(user);
-                navigate(location?.state ? location?.state : '/')
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: 'User logged in successfully.',
-                    showConfirmButton: false,
-                    background: '#343436',
-                    heightAuto: '100px',
-                    color: 'white',
-                    timer: 2000
-                })
-            })
-            .then(error => {
-                console.log("Error:", error.message);
-                Swal.fire({
-                    position: 'center',
-                    icon: 'success',
-                    title: "Your google account is invalid.",
-                    showConfirmButton: false,
-                    background: '#343436',
-                    heightAuto: '100px',
-                    color: 'white',
-                    timer: 2000
-                })
-            })
-    }
-
     return (
         <div className='max-w-screen-xl mx-auto px-2 md:px-12 lg:px-20'>
             <div className="hero min-h-screen">
@@ -151,7 +119,6 @@ const Login = () => {
                                         required />
                                 </div>
                                 <div className="form-control">
-                                    {/* <button disabled={disabled} className="bg-gray-100 px-2 py-2 rounded text-[#BB8506] font-semibold border-b-2 border-[#BB8506] mb-2 hover:bg-slate-800 hover:text-[#BB8506]">Login</button> */}
                                     <button disabled={disabled} className='btn btn-success mt-2'>Login</button>
                                 </div>
 
@@ -165,7 +132,7 @@ const Login = () => {
                                     <h3 className='text-xs text-center font-semibold'>Or sign in with</h3>
                                     <div className='flex justify-center items-center gap-4 mt-3'>
                                         <button> <img src={fbImg} alt="" /> </button>
-                                        <button onClick={handleGoogleLogin}>  <img src={googleImg} alt="" /></button>
+                                        <SocialLogin></SocialLogin>
                                     </div>
                                 </div>
 
