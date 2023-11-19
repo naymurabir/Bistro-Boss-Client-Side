@@ -27,15 +27,28 @@ const AllUsers = () => {
     }
 
     const handleMakeAdmin = (user) => {
-        axiosInstance.patch(`/users/admin/${user._id}`)
-            .then(res => {
-                refetch()
-                if (res.data.modifiedCount > 0) {
-                    swal("The user has been made to admin successfully.", {
-                        icon: "success",
-                    });
+        swal({
+            title: "Are you sure?",
+            text: "Do you want to make admin?",
+            icon: "success",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    axiosInstance.patch(`/users/admin/${user._id}`)
+                        .then(res => {
+                            refetch()
+                            if (res.data.modifiedCount > 0)
+                                swal("The user has been made to admin successfully.", {
+                                    icon: "success",
+                                });
+                        })
+
+                } else {
+                    swal("Not modified!");
                 }
-            })
+            });
     }
 
     const handleDeleteUser = (user) => {

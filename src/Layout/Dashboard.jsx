@@ -1,13 +1,13 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { FaCalendar, FaHome, FaShoppingCart, FaRegStar, FaRegBookmark, FaSearch, FaPhone, FaRegAddressBook, FaUser, FaList } from "react-icons/fa";
 import useCarts from "../Hooks/useCarts";
+import useAdmin from "../Hooks/useAdmin";
 
 const Dashboard = () => {
 
     const { carts } = useCarts()
 
-    const isAdmin = true
-
+    const { isAdmin } = useAdmin()
 
     return (
         <div className="max-w-screen-xl mx-auto px-2 md:px-10 lg:px-20 ">

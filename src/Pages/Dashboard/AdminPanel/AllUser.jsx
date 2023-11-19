@@ -23,7 +23,7 @@ const AllUser = ({ user, index, handleDeleteUser, handleMakeAdmin }) => {
 
                 <td>
                     {
-                        user.role === 'admin' ? 'Admin' : <button onClick={() => handleMakeAdmin(user)} className=' text-white py-2 px-2 bg-[#D1A054] text-xl rounded-sm font-semibold'> <FaUsers></FaUsers> </button>
+                        user.role === 'admin' ? <button className="bg-green-500 text-white p-1 rounded"> Admin </button> : <button onClick={() => handleMakeAdmin(user)} className=' text-white py-2 px-2 bg-[#D1A054] text-xl rounded-sm font-semibold'> <FaUsers></FaUsers> </button>
                     }
                 </td>
 
