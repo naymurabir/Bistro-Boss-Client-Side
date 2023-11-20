@@ -1,13 +1,15 @@
-import PropTypes from 'prop-types';
 import { Navigate } from "react-router-dom";
+import useAdmin from "../../Hooks/useAdmin";
+import useAuth from "../../Hooks/useAuth";
 import { ThreeDots } from "react-loader-spinner";
-import useAuth from '../../Hooks/useAuth';
 
-const PrivateRoute = ({ children }) => {
+const AdminRoute = ({ children }) => {
 
     const { user, loading } = useAuth()
 
-    if (loading) {
+    const { isAdmin, isAdminLoading } = useAdmin()
+
+    if (loading || isAdminLoading) {
         return <div className="text-center flex justify-center items-center">
             <ThreeDots
                 height="80"
@@ -22,16 +24,13 @@ const PrivateRoute = ({ children }) => {
         </div>
     }
 
-    if (user) {
+    if (user && isAdmin) {
         return children;
     }
 
 
     return <Navigate state={location.pathname} to="/login"></Navigate>
+
 };
 
-PrivateRoute.propTypes = {
-    children: PropTypes.node.isRequired
-}
-
-export default PrivateRoute;
+export default AdminRoute;
