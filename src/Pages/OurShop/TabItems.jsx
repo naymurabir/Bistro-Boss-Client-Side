@@ -41,7 +41,7 @@ const TabItems = () => {
                     <Tab>Salad</Tab>
                     <Tab>Pizza</Tab>
                     <Tab>Soup</Tab>
-                    <Tab>Desert</Tab>
+                    <Tab>Dessert</Tab>
                     <Tab>Drinks</Tab>
                     <hr className="w-[50%] mx-auto my-3" />
                 </TabList>
