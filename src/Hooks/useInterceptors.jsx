@@ -23,11 +23,11 @@ const useInterceptors = () => {
         instance.interceptors.response.use(function (response) {
             return response;
         }, async function (error) {
-            // if (error.response.status === 401 || error.response.status === 403) {
-            //     await logOut()
-            //     console.log('log out')
-            //     navigate('/login')
-            // }
+            if (error.response.status === 401 || error.response.status === 403) {
+                await logOut()
+                console.log('log out')
+                navigate('/login')
+            }
             return Promise.reject(error);
         });
     }, [logOut, navigate])
