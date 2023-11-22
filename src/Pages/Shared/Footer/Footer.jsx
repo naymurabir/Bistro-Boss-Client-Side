@@ -29,7 +29,7 @@ const Footer = () => {
             </div>
             {/* copy rihgt  */}
             <div className='bg-[#111827] py-2'>
-                <h1 className='text-center text-white'>Copyright © CulinaryCloud. All rights reserved.</h1>
+                <h1 className='text-center text-white'>Copyright © Naymur Rahman Abir.</h1>
             </div>
         </div>
     );

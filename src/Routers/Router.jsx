@@ -17,12 +17,16 @@ import AddItems from '../Pages/Dashboard/AdminPanel/AddItems';
 import AdminHome from '../Pages/Dashboard/AdminPanel/AdminHome';
 import AdminRoute from '../Pages/PrivateRoute/AdminRoute';
 import UpdateItem from '../Pages/Dashboard/AdminPanel/UpdateItem';
+import Payment from '../Pages/Dashboard/UserPanel/Payment';
+import ErrorPage from '../Pages/ErrorPage/ErrorPage';
+import PaymentHistory from '../Pages/Dashboard/UserPanel/PaymentHistory';
 
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -53,6 +57,7 @@ const router = createBrowserRouter([
     {
         path: '/dashboard',
         element: <PrivateRoute> <Dashboard></Dashboard> </PrivateRoute>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             //Admin Routes
             {
@@ -83,6 +88,14 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/cart',
                 element: <Cart></Cart>
+            },
+            {
+                path: '/dashboard/payment',
+                element: <Payment></Payment>
+            },
+            {
+                path: '/dashboard/paymentHistory',
+                element: <PaymentHistory></PaymentHistory>
             }
         ]
     }

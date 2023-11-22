@@ -4,6 +4,7 @@ import useInterceptors from "../../../Hooks/useInterceptors";
 import SectionTitle from "../../Shared/SectionTitle/SectionTitle";
 import SingleCart from "./SingleCart";
 import swal from "sweetalert";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
 
@@ -11,7 +12,7 @@ const Cart = () => {
 
     const { carts, isPending, refetch } = useCarts()
 
-    const totalPrice = carts.reduce((total, item) => total + item.price, 0)
+    const totalPrice = carts.reduce((total, item) => total + parseInt(item.price), 0);
 
     if (isPending) {
         return <div className="text-center flex justify-center items-center">
@@ -66,7 +67,9 @@ const Cart = () => {
 
                     <h2 className="text-xl md:text-2xl font-semibold">Total Price: {totalPrice}</h2>
 
-                    <p className="bg-[#D1A054] px-3 py-2 ms:w-[50px] text-white rounded-md">Pay</p>
+                    <Link to='/dashboard/payment'>
+                        <button className="bg-[#D1A054] px-3 py-2 ms:w-[50px] text-white rounded-md">Pay</button>
+                    </Link>
 
                 </div>
                 <hr className="my-4" />
