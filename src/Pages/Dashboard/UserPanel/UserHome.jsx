@@ -1,6 +1,6 @@
 import useAuth from "../../../Hooks/useAuth";
 
-const AdminHome = () => {
+const UserHome = () => {
 
     const { user } = useAuth()
 
@@ -13,4 +13,4 @@ const AdminHome = () => {
     );
 };
 
-export default AdminHome;
+export default UserHome;

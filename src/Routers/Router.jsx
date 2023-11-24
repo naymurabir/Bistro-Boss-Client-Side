@@ -20,6 +20,7 @@ import UpdateItem from '../Pages/Dashboard/AdminPanel/UpdateItem';
 import Payment from '../Pages/Dashboard/UserPanel/Payment';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import PaymentHistory from '../Pages/Dashboard/UserPanel/PaymentHistory';
+import UserHome from '../Pages/Dashboard/UserPanel/UserHome';
 
 
 const router = createBrowserRouter([
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
                 element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
             },
             //Users Routes
+            {
+                path: '/dashboard/userHome',
+                element: <UserHome></UserHome>
+            },
             {
                 path: '/dashboard/cart',
                 element: <Cart></Cart>
